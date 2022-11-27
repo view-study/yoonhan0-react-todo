@@ -1,15 +1,17 @@
 import React from 'react'
 
-function TodoItems() {
+function TodoItems({todo, onClickTodoItem}) {
+  // const {todo} = props
+  
   return (
-    <section id="listBox" style={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
-        <div className="todo-item">
-        <div className="remove">x</div>
-        <div className="todo-text">리스트 내용</div>
-        <div className="check-mark">✓</div>
-        </div>
-    </section>
-  )
+    <div className="todo-item" onClick={onClickTodoItem(todo.id)}>
+      <div className="remove">x</div>
+      <div className="todo-text">{todo.title}</div>
+      <div className="check-mark">
+        {todo.completed? "✓" : ""}
+      </div>
+    </div>
+  );
 }
 
 export default TodoItems
