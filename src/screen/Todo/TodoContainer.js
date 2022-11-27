@@ -18,9 +18,7 @@ function TodoContainer() {
         const data = await api.json()
         setTodoList(data)   // todoList를 다루기 위해서 setTodoList 사용
     }
-    const setList = (todoList) => {
-        let state = {...todoList}
-    }
+    
     const handleClickTodoItem = (id) => () => {
         
         let newList = todoList.map(e => {
